@@ -1,1 +1,1 @@
-# learning react, Spring boot, resetful API
+# learning react, Spring boot, Restful API
