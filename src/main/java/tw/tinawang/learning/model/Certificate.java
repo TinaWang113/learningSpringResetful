@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -15,10 +16,11 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
-public class Certificate {
+public @Data class Certificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long certificateID;
+    
     @NonNull
     private String ctfName;
 

@@ -14,7 +14,7 @@ public class DatabaseLoder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception{
-        Member member = new Member("Test", "Tester");
+        Member member = new Member("Test", "Tester" );
         memberRepository.save(member);
 
     }
