@@ -7,44 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
-public class MemberSkill {
+public @Data class MemberSkill {
     
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long mbSkillId;
-
+    @NonNull
     @ManyToOne
     @JoinColumn(name="mid")
     private Member member;
 
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "skillId")
     private Skill skill;
-
-    public Long getMbSkillId() {
-        return mbSkillId;
-    }
-
-    public void setMbSkillId(Long mbSkillId) {
-        this.mbSkillId = mbSkillId;
-    }
-
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public Skill getSkill() {
-        return skill;
-    }
-
-    public void setSkill(Skill skill) {
-        this.skill = skill;
-    }
-
-    
 }

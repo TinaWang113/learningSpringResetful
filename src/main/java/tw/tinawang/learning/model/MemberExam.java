@@ -9,53 +9,29 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
-public class MemberExam {
+public @Data class MemberExam {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long MemberExamId;
 
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "mid")
     private Member member;
 
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "examId")
     private ExamInfo examInfo;
+    @NonNull
     private Date joinTime;
-
-    public Long getMemberExamId() {
-        return MemberExamId;
-    }
-
-    public void setMemberExamId(Long memberExamId) {
-        MemberExamId = memberExamId;
-    }
-
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public ExamInfo getExamInfo() {
-        return examInfo;
-    }
-
-    public void setExamInfo(ExamInfo examInfo) {
-        this.examInfo = examInfo;
-    }
-
-    public Date getJoinTime() {
-        return joinTime;
-    }
-
-    public void setJoinTime(Date joinTime) {
-        this.joinTime = joinTime;
-    }
-
-
-    
+   
 }

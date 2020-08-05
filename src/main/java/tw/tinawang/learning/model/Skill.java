@@ -1,40 +1,25 @@
 package tw.tinawang.learning.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-public class Skill {
+@NoArgsConstructor
+@RequiredArgsConstructor
+@Entity
+public @Data class Skill {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long skillID;
+    @NonNull
     private String name;
+    @NonNull
     private String type;
 
-    public Long getSkillID() {
-        return skillID;
-    }
-
-    public void setSkillID(Long skillID) {
-        this.skillID = skillID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    
 }

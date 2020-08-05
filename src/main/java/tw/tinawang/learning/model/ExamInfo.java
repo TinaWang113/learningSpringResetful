@@ -5,28 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
-public class ExamInfo {
+public @Data class ExamInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long examinfoId;
+    @NonNull
     private String question;
 
-    public Long getExaminfoId() {
-        return examinfoId;
-    }
-
-    public void setExaminfoId(Long examinfoId) {
-        this.examinfoId = examinfoId;
-    }
-
-    public String getQuestion() {
-        return question;
-    }
-
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    
 }

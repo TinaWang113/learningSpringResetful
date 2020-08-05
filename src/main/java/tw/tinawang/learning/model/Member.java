@@ -1,49 +1,27 @@
 package tw.tinawang.learning.model;
 
-import java.util.UUID;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
-public class Member {
+public @Data class Member {
     
     @Id
     private String mid;
+    @NonNull
     private String fname;
+    @NonNull
     private String lname;
 
-    public Member(){};
-
-    public Member(String fname, String lname){
-        this.mid = UUID.randomUUID().toString().replaceAll("-", "");
-        this.fname = fname;
-        this.lname = lname;
-    }
-
-    public String getMid() {
-        return mid;
-    }
-
-    public void setMid(String mid) {
-        this.mid = mid;
-    }
-
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
-    }
-
+    private Date createDate;
     
 }
